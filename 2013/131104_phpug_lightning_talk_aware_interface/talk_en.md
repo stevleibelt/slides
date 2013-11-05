@@ -1,23 +1,20 @@
-# Lightningtalk The AwareInterface
+# Lightningtalk AwareInterface
 
-12.11.2013
-PHPUserGroup Hamburg
+12.11.2013   
+PHPUserGroup Hamburg   
 
 ---
 
-## Who Am I
+## Who I Am
 
 * [Stev Leibelt](http://stev.leibelt.de/)
 * PHP developer
 * big fan of [open source](http://opensource.org/licenses)
 * loves words like:
     * "Linux"
-    * "BSD"
     * "[L]GPL"
     * "ZFS"
-    * "Composer"
     * "Gang Of Four"
-    * "KISS"
     * "[free as in freedom, not as in beer.](http://theopensourceschool.blogspot.de/2010/01/free-as-in-freedom-not-as-in-free-beer.html)"
 * was born in the moste beautiful [free state](http://en.wikipedia.org/wiki/Saxony) :-)
 * working for a company with one main product (and yes, old code exists ;-))
@@ -29,7 +26,7 @@ PHPUserGroup Hamburg
 * write easy to read code
 * dependency injection (automatically and "by hand")
 * philosophy and interpretion of words ;-)
-* keep in mind, there is a world without "DIC" [5] out there
+* remind you that there is a world without "DIC" [5] out there
 
 ---
 
@@ -37,48 +34,52 @@ PHPUserGroup Hamburg
 
 * dependency injection (also known as "interface injection" [0], [2])
 * declare dependencies via interfaces to easy up reading classes
+* declare interfaces to define the way of injecting "MyClass"
 * explains what the code expects [6]
-* you only have to read the "implements" section to know all the dependencies
 * names all the "moving parts"
 * easy up counting of dependencies via "grep -r 'MyClassAwareInterface' source/"
 
 ---
 
-## Dependency Injection? But There Are Other Types Also! [1]
+## Dependency Injection?
+
+But There Are Other Types Also! [1]
+
+---
 
 ### Constructor Injection 
 
-* + object is in a ready state
-* + object declares complexity up front
+* \+ object is in a ready state
+* \+ object declares complexity up front
 * +/- dependencies can not be swapped after instantiation 
-* - can lead to cyclical dependencies 
-* - dependencies are not polymorphic
-* - there is a parameter per dependency
-* - constructors are not part of the liskov substitutaion principle [4]
+* \- can lead to cyclical dependencies 
+* \- dependencies are not polymorphic
+* \- there is a parameter per dependency
+* \- constructors are not part of the liskov substitutaion principle [4] (killer phrase!)
 
 ---
 
 ### Setter Injection
 
-* + one injection point per dependency
+* \+ one injection point per dependency
 * +/- its hard to distinguish between mandatory and optional dependencies
-* - consumer has to be very honest to inject all dependencies
+* \- consumer has to be very honest to inject all dependencies
 
 ---
 
-### Interface Injection (A Special Setter Injection)
+### Interface Injection
+### (A Special Setter Injection)
 
-* + increase readability of class structure
-* + one injection point per dependency
-* + interface injection class to lead to a rule to distinguish between mandatory and optiona dependencies
-* + could only consist of a "injectMyClass" method
-* + easy way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
-* - could lead to a lot of consumed interfaces
-* - consumer has to be very honest to inject all dependencies
+* \+ increase readability of class structure
+* \+ one defined injection point and way per dependency
+* \+ interface injection could lead to a project based rule to distinguish between mandatory and optiona dependencies
+* \+ easy way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
+* \- could lead to a lot of consumed interfaces
+* \- consumer has to be very honest to inject all dependencies
 
 ---
-
-## AwareInterface === Interface Injection?
+   
+### AwareInterface === Interface Injection?
 
 * no (at least not for me)
 * injection interface defines a method to inject a typ/object as dependency
@@ -105,8 +106,6 @@ PHPUserGroup Hamburg
 * create a new feature and try to test it (without big refactoring)
     * easy up removing of impractical features
 
-## Again, AwareInterface For What?
-
 ---
 
 ## Questions?
@@ -122,13 +121,13 @@ PHPUserGroup Hamburg
 
 ## Source
 
-[0](http://avalanche123.com/blog/2010/10/01/interface-injection-and-symfony2-dic/)
-[1](http://www.slideshare.net/ralphschindler/zend-di-in-zf-20)
-[2](http://martinfowler.com/articles/injection.html#InterfaceInjection)
-[3](http://de.wikipedia.org/wiki/Dependency_Injection)
-[4](http://en.wikipedia.org/wiki/Liskov_substitution_principle)
-[5](http://api.symfony.com/2.0/Symfony/Component/DependencyInjection/ContainerAwareInterface.html)
-[6](http://stackoverflow.com/questions/6188466/what-is-aware-when-should-i-include-in-my-class-name)
-[7](http://artodeto.bazzline.net/archives/418-some-thoughts-about-AwareInterfaces-and-InjectorInterfaces.html)
-[8](http://www.thefreedictionary.com/aware)
-[9](https://github.com/php-loep/di/issues/3)
+[0 - Interface Injection And Symfony 2 DIC](http://avalanche123.com/blog/2010/10/01/interface-injection-and-symfony2-dic/)   
+[1 - Zend DI In ZF 2](http://www.slideshare.net/ralphschindler/zend-di-in-zf-20)   
+[2 - Interface Injection By Uncle Bob](http://martinfowler.com/articles/injection.html#InterfaceInjection)   
+[3 - Dependency Injection](http://en.wikipedia.org/wiki/Dependency_Injection)   
+[4 - Liskov Substitution Principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle)   
+[5 - Symfony 2 And The Container Aware Interface](http://api.symfony.com/2.0/Symfony/Component/DependencyInjection/ContainerAwareInterface.html)   
+[6 - What Is Aware And When Should I Implement It](http://stackoverflow.com/questions/6188466/what-is-aware-when-should-i-include-in-my-class-name)   
+[7 - Thoughts About AwareInterface](http://artodeto.bazzline.net/archives/418-some-thoughts-about-AwareInterfaces-and-InjectorInterfaces.html)   
+[8 - The Free Dictonary](http://www.thefreedictionary.com/aware)   
+[9 - PHP Loep](https://github.com/php-loep/di/issues/3)   
