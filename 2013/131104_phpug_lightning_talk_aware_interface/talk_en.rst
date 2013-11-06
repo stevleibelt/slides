@@ -174,17 +174,24 @@ Thanks!
 Source
 ======
 
-1) `Interface Injection And Symfony 2 DIC`_   
-2) `Zend DI In ZF 2`_
-
-[2] - Interface Injection By Uncle Bob](http://martinfowler.com/articles/injection.html#InterfaceInjection)   
-[3] - Dependency Injection](http://en.wikipedia.org/wiki/Dependency_Injection)   
-[4] - Liskov Substitution Principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle)   
-[5] - Symfony 2 And The Container Aware Interface](http://api.symfony.com/2.0/Symfony/Component/DependencyInjection/ContainerAwareInterface.html)   
-[6] - What Is Aware And When Should I Implement It](http://stackoverflow.com/questions/6188466/what-is-aware-when-should-i-include-in-my-class-name)   
-[7] - Thoughts About AwareInterface](http://artodeto.bazzline.net/archives/418-some-thoughts-about-AwareInterfaces-and-InjectorInterfaces.html)   
-[8] - The Free Dictonary](http://www.thefreedictionary.com/aware)   
-[9] - PHP Loep](https://github.com/php-loep/di/issues/3)   
+0) `Interface Injection And Symfony 2 DIC`_   
+1) `Zend DI In ZF 2`_
+2) `Interface Injection By Uncle Bob`_
+3) `Dependency Injection`_
+4) `Liskov Substitution Principle`_
+5) `Symfony 2 And The Container Aware Interface`_
+6) `What Is Aware And When Should I Implement It`_
+7) `Thoughts About AwareInterface`_
+8) `The Free Dictonary`_
+9) `PHP Loep`_
 
 .. _Interface Injection And Symfony 2 DIC: http://avalanche123.com/blog/2010/10/01/interface-injection-and-symfony2-dic/
 .. _Zend DI In ZF 2: http://www.slideshare.net/ralphschindler/zend-di-in-zf-20
+.. _Interface Injection By Uncle Bob: http://martinfowler.com/articles/injection.html#InterfaceInjection
+.. _Dependency Injection: http://en.wikipedia.org/wiki/Dependency_Injection
+.. _Liskov Substitution Principle: http://en.wikipedia.org/wiki/Liskov_substitution_principle
+.. _Symfony 2 And The Container Aware Interface: http://api.symfony.com/2.0/Symfony/Component/DependencyInjection/ContainerAwareInterface.html
+.. _What Is Aware And When Should I Implement It: http://stackoverflow.com/questions/6188466/what-is-aware-when-should-i-include-in-my-class-name
+.. _Thoughts About AwareInterface: http://artodeto.bazzline.net/archives/418-some-thoughts-about-AwareInterfaces-and-InjectorInterfaces.html
+.. _The Free Dictonary: http://www.thefreedictionary.com/aware
+.. _PHP Loep: https://github.com/php-loep/di/issues/3
