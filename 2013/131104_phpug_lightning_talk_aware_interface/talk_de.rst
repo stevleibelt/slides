@@ -20,7 +20,7 @@ PHPUserGroup Hamburg
 
 :data-y: r1000
 
-Wer Bin Ich?
+Wer bin Ich?
 ============
 
 * `Stev Leibelt`_
@@ -42,13 +42,13 @@ Wer Bin Ich?
 
 ----
 
-Um Was Geht Es?
+Um was geht es?
 ===============
 
-* Schreibe einfach zu lesenden Quelltext
+* Schreiben von einfach zu lesenden Quelltext
 * Dependency Injection (automatisch oder "per Hand")
 * Philosophieren und Interpretieren von Wörtern ;-)
-* Euch daran zu erinnern, dass es eine Welt ohne "DIC" [5] gibt
+* Daran zu erinnern, dass es eine Welt ohne "DIC" [5] gibt
 
 ----
 
@@ -56,15 +56,15 @@ Um Was Geht Es?
 :data-y: r500
 :data-scale: 0.1
 
-AwareInterface, For What?
-=========================
+Wozu ein AwareInterface?
+========================
 
-* dependency injection (also known as "interface injection" [0], [2])
-* declare dependencies via interfaces to easy up reading classes
-* declare interfaces to define the way of injecting "MyClass"
-* explains what the code expects [6]
-* names all the "moving parts"
-* easy up counting of dependencies via "grep -r 'MyClassAwareInterface' source/"
+* Dependency Injection (auch bekannt als "Interface Injection" [0], [2])
+* Deklarieren von Abhängigkeiten durch Interfaces vereinfacht das Erfassen der Klasse
+* Deklarieren von Interfaces definiert den Weg wie man "MyClass" injizieren
+* Erklärt was der Quelltext erwartet [6]
+* Bezeichnet alle "beweglichen Teile"
+* Ermöglicht das Zählen der Abhängigkeiten durch "grep -r 'MyClassAwareInterface' source/"
 
 ----
 
@@ -73,41 +73,41 @@ AwareInterface, For What?
 Dependency Injection?
 =====================
 
-But There Are Other Types Also! [1]
+Aber es gibt doch mehrere Wege! [1]
 
 ----
 
 Constructor Injection 
 ---------------------
 
-* \+ object is in a ready state
-* \+ object declares complexity up front
-* +/- dependencies can not be swapped after instantiation 
-* \- can lead to cyclical dependencies 
-* \- dependencies are not polymorphic
-* \- there is a parameter per dependency
-* \- constructors are not part of the liskov substitutaion principle [4] (killer phrase!)
+* \+ Objekt ist in einem benutzbaren Stadium
+* \+ Object deklariert die Komplexität im Voraus
+* +/- Abhängigkeiten können nicht nachträglich geändert werden
+* \- Kann zu zyklischen Abhängigkeiten führen
+* \- Abhänigkeiten sind nicht polymorph
+* \- Ein Parameter pro Abhängigkeit
+* \- Konstruktoren sind nicht Teil des Liskov Substitutaion Principle [4] (Totschlagkriterium!)
 
 ----
 
 Setter Injection
 ----------------
 
-* \+ one injection point per dependency
-* +/- its hard to distinguish between mandatory and optional dependencies
-* \- consumer has to be very honest to inject all dependencies
+* \+ Ein Punkt zur injizieren pro Abhängigkeit
+* +/- Es ist schwer zwischen optionalen und zwingenden Abhängigkeiten zu unterscheiden
+* \- Verbraucher muss sich sicher sein alle Abhängigkeiten injiziert zu haben
 
 ----
 
-Interface Injection (A Special Setter Injection)
+Interface Injection (Ein spezieller Setter Injection)
 ------------------------------------------------
 
-* \+ increase readability of class structure
-* \+ one defined injection point and way per dependency
-* \+ interface injection could lead to a project based rule to distinguish between mandatory and optiona dependencies
-* \+ easy way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
-* \- could lead to a lot of consumed interfaces
-* \- consumer has to be very honest to inject all dependencies
+* \+ Erhöht die Lesbarkeit der Klasse
+* \+ Eine definierte Art wie man man eine Abhängigkeit injiziert
+* \+ Interface injection kann zu einer projektweiten Regel führen wie man optionale und zwingende Abhängigkeiten bezeichnet
+* \+ Vereinfacht das Einbauen von "DI" [3] im alten Quelltext (indem man Prüfungen wie "instanceof MyClassAwareInterface" hart verdrahtet [9])
+* \- Kann zu vielen konsumiert Interfaces führen
+* \- Konstruktoren sind nicht Teil des Liskov Substitutaion Principle [4] (Totschlagkriterium!)
 
 ----
 
