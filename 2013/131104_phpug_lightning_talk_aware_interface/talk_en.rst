@@ -23,17 +23,22 @@ PHPUserGroup Hamburg
 Who I Am
 ========
 
-* [Stev Leibelt](http://stev.leibelt.de/)
+* `Stev Leibelt`_
 * PHP developer
-* big fan of [open source](http://opensource.org/licenses)
+* big fan of `open source`_
 * loves words like:
     * "Linux"
     * "[L]GPL"
     * "ZFS"
     * "Gang Of Four"
-    * "[free as in freedom, not as in beer.](http://theopensourceschool.blogspot.de/2010/01/free-as-in-freedom-not-as-in-free-beer.html)"
-* was born in the moste beautiful [free state](http://en.wikipedia.org/wiki/Saxony) :-)
+    * "`free as in freedom, not as in beer`_."
+* was born in the moste beautiful `free state`_ :-)
 * working for a company with one main product (and yes, old code exists ;-))
+
+.. _Stev Leibelt: http://stev.leibelt.de
+.. _open source: http://opensource.org/licenses
+.. _free as in freedom, not as in beer: http://theopensourceschool.blogspot.de/2010/01/free-as-in-freedom-not-as-in-free-beer.html
+.. _free state: http://en.wikipedia.org/wiki/Saxony
 
 ----
 
