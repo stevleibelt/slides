@@ -33,7 +33,7 @@ Wer bin Ich?
     * "Gang Of Four"
     * "`free as in freedom, not as in beer`_."
 * Wurde im schönsten `Freistaat`_ geboren :-)
-* working for a company with one main product (and yes, old code exists ;-))
+* Arbeitet für eine Firma mit einem Hauptprodukt (und ja, es gibt noch alten Quelltext ;-))
 
 .. _Stev Leibelt: http://stev.leibelt.de
 .. _open source: http://opensource.org/licenses
@@ -45,7 +45,7 @@ Wer bin Ich?
 Um was geht es?
 ===============
 
-* Schreiben von einfach zu lesenden Quelltext
+* Schreiben von einfach zu lesendem Quelltext
 * Dependency Injection (automatisch oder "per Hand")
 * Philosophieren und Interpretieren von Wörtern ;-)
 * Daran zu erinnern, dass es eine Welt ohne "DIC" [5] gibt
@@ -60,7 +60,7 @@ Wozu ein AwareInterface?
 ========================
 
 * Dependency Injection (auch bekannt als "Interface Injection" [0], [2])
-* Deklarieren von Abhängigkeiten durch Interfaces vereinfacht das Erfassen der Klasse
+* Deklarieren von Abhängigkeiten durch Interfaces vereinfacht das Lesen der Klasse
 * Deklarieren von Interfaces definiert den Weg wie man "MyClass" injizieren
 * Erklärt was der Quelltext erwartet [6]
 * Bezeichnet alle "beweglichen Teile"
@@ -81,7 +81,7 @@ Constructor Injection
 ---------------------
 
 * \+ Objekt ist in einem benutzbaren Stadium
-* \+ Object deklariert die Komplexität im Voraus
+* \+ Objekt deklariert die Komplexität im Voraus
 * +/- Abhängigkeiten können nicht nachträglich geändert werden
 * \- Kann zu zyklischen Abhängigkeiten führen
 * \- Abhänigkeiten sind nicht polymorph
@@ -100,13 +100,13 @@ Setter Injection
 ----
 
 Interface Injection (Ein spezieller Setter Injection)
-------------------------------------------------
+-----------------------------------------------------
 
 * \+ Erhöht die Lesbarkeit der Klasse
-* \+ Eine definierte Art wie man man eine Abhängigkeit injiziert
-* \+ Interface injection kann zu einer projektweiten Regel führen wie man optionale und zwingende Abhängigkeiten bezeichnet
-* \+ Vereinfacht das Einbauen von "DI" [3] im alten Quelltext (indem man Prüfungen wie "instanceof MyClassAwareInterface" hart verdrahtet [9])
-* \- Kann zu vielen konsumiert Interfaces führen
+* \+ Eine definierte Art wie man eine Abhängigkeit injiziert
+* \+ Interface Injection kann zu einer projektweiten Regel führen wie man optionale und zwingende Abhängigkeiten bezeichnet
+* \+ Vereinfacht das Einbauen von "DI" [3] in alten Quelltext (durch hart verdrahten einer Prüfungen wie "instanceof MyClassAwareInterface" [9])
+* \- Kann zu vielen Interfaces Definitionen führen
 * \- Konstruktoren sind nicht Teil des Liskov Substitutaion Principle [4] (Totschlagkriterium!)
 
 ----
@@ -117,34 +117,34 @@ Interface Injection (Ein spezieller Setter Injection)
 AwareInterface === Interface Injection?
 =======================================
 
-* no (at least not for me)
-* injection interface defines a method to inject a typ/object as dependency
-* aware interface should do a bit more
+* Nein (zumindest nicht für mich)
+* Injection Interface definiert den Weg wie ein Typ/Objekt als Abhängigkeit injizieren wird
+* Ein Aware Interface sollte mehr sein
 
 ----
 
 :data-y: r1000
 
-My Ideal World
-==============
+Meine Traumwelt
+===============
 
-* "Aware implies knowledge gained through one's own perceptions or by means of information" [8]
-* should contain two or three methods [7]:
+* "Bewusstsein impliziert das Wissen gesammelt durch die eigene Erkenntnisse oder mittels erhaltener Informationen" [8]
+* Es sollte wenigst die ersten zwei Methoden beinhalten [7]:
     * "setMyClass(MyClassInterface $myClass)"
     * "getMyClass()"
     * "hasMyClass()" (optional)
-* if "hasMyClass()" is defined in the interface, the dependency should be optional
-* if dependency is mandatory, the name of the interface should be "InjectInterface" or "DependendInterface"
+* Falls "hasMyClass()" definiert ist, sollte die Abhängigkeit optional sein
+* Falls die Abhängigkeit zwingend ist, sollte der Name des Interfaces auf "InjectInterface" oder "DependendInterface" enden
 
 ----
 
-Optional Dependencies?
-======================
+Optionale Abhängigkeiten?
+=========================
 
-* for example, no logger injected leads to no logging but still working code
-    * speed and easy up unittests (as "DI" in general)
-* create a new feature and try to test it (without big refactoring)
-    * easy up removing of impractical features
+* Beispiel, wird kein Logger injiziert gibt es kein Logging, aber der Code funktioniert weiterhin
+    * Vereinfacht das Unittesten (wie "DI" im Allgemeinen)
+* Implementierung von neuen, optionalen Funktionalitäten und einfaches Ausprobieren (ohne großem Aufwand)
+    * Einfaches entfernen von unpraktischen Funktionalitäten
 
 ----
 
@@ -152,32 +152,32 @@ Optional Dependencies?
 :data-scale: 1
 :data-rotate: -90
 
-Questions?
-==========
+Fragen?
+=======
 
 ----
 
 :data-rotate: -90
 
-Your Opinion?
+Eure Meinung?
 =============
 
-* are you using aware/injection interfaces (why/why not)?
-* how do you clear up optional and mandatory dependencies?
+* Nutzt ihr AwareInterfaces oder InjectionInterfaces (warum, warum nicht?)
+* Wie verdeutlicht ihr optionale und zwingende Abhängigkeiten?
 
 ----
 
 :data-rotate: 270
 
-Thanks!
-=======
+Dankeschön!
+===========
 
 ----
 
 :data-y: 1000
 
-Source
-======
+Quellen
+=======
 
 0) `Interface Injection And Symfony 2 DIC`_   
 1) `Zend DI In ZF 2`_
