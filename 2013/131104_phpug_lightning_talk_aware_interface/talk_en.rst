@@ -45,7 +45,7 @@ Who I Am
 What Is This Talk About?
 ========================
 
-* dependency injection (automatically and "by hand")
+* short reminder of dependency injection (automatically and "by hand")
 * add some thoughts about how to write easy to read code
 * philosophy and interpretion of words ;-)
 * remind you about the fact that there is a world without "DIC" [5] out there
@@ -61,7 +61,7 @@ AwareInterface?
 
 * they are good for dependency injection
 * also known as "interface injection" [0], [2]
-* declareing dependency via interface simplifies the reading of a class
+* declaring dependency via interface simplifies the reading of a class
 * defines the way of injecting an object "MyClass"
 * explains what the code expects [6]
 * names all the "moving parts"
@@ -107,7 +107,7 @@ Interface Injection (A Special Setter Injection)
 
 * \+ increases the readability of class a structure
 * \+ a defined injection point and way per dependency
-* \+ interface injection could lead to a project based rule to distinguish between mandatory and optiona dependencies
+* \+ interface injection could lead to a project based rule to distinguish between mandatory and optional dependencies
 * \+ easy way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
 * \- could lead to a lot of consumed interfaces
 * \- consumer has to be very honest to inject all dependencies
