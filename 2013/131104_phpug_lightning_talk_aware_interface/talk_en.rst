@@ -85,7 +85,6 @@ Constructor Injection
 * \+ object declares complexity up front
 * +/- dependencies can not be swapped after instantiation 
 * \- can lead to cyclical dependencies 
-* \- dependencies are not polymorphic
 * \- there is a parameter per dependency
 * \- constructors are not part of the liskov substitutaion principle [4] (killer phrase!)
 
@@ -95,9 +94,8 @@ Setter Injection
 ----------------
 
 * \+ one injection point per dependency
-* +/- its hard to distinguish between mandatory and optional dependencies
 * \- no defined way how to inject "MyClass" into the code
-* \- hard to distinguish between mandatory and optional dependency
+* \- its hard to distinguish between mandatory and optional dependencies
 * \- consumer has to be very honest to inject all dependencies
 
 ----
@@ -105,10 +103,10 @@ Setter Injection
 Interface Injection (A Special Setter Injection)
 ------------------------------------------------
 
-* \+ increases the readability of class a structure
-* \+ a defined injection point and way per dependency
+* \+ increases the readability of a class structure
+* \+ is a defined injection point and way per dependency
 * \+ interface injection could lead to a project based rule to distinguish between mandatory and optional dependencies
-* \+ easy way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
+* \+ simplifies way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
 * \- could lead to a lot of consumed interfaces
 * \- consumer has to be very honest to inject all dependencies
 
