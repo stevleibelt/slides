@@ -20,8 +20,8 @@ PHPUserGroup Hamburg
 
 :data-y: r1000
 
-Who I Am
-========
+Who I Am?
+=========
 
 * `Stev Leibelt`_
 * PHP developer
@@ -135,7 +135,7 @@ What Is This "Bit More"?
     * "getMyClass()"
     * "hasMyClass()" (optional)
 * if it contains a "hasMyClass()" method, the dependency should be optional
-* if dependency is mandatory, the name of the interface should be "InjectInterface" or "DependendInterface"
+* if dependency is mandatory, the name of the interface could be "InjectInterface" or "DependendInterface"
 
 ----
 

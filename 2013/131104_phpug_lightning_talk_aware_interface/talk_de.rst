@@ -42,13 +42,13 @@ Wer bin Ich?
 
 ----
 
-Um was geht es?
-===============
+Um was geht es in diesem Vortrag?
+=================================
 
-* Schreiben von einfach zu lesendem Quelltext
-* Dependency Injection (automatisch oder "per Hand")
+* Kurze Auffrischung was Dependency Injection ist
+* Anmerkung wie man lesbaren Queltext schreiben kann
 * Philosophieren und Interpretieren von Wörtern ;-)
-* Daran zu erinnern, dass es eine Welt ohne "DIC" [5] gibt
+* Daran zu erinnern, dass es noch immer eine Welt ohne "DIC" [5] gibt
 
 ----
 
@@ -56,15 +56,15 @@ Um was geht es?
 :data-y: r500
 :data-scale: 0.1
 
-Wozu ein AwareInterface?
-========================
+AwareInterface?
+===============
 
-* Dependency Injection (auch bekannt als "Interface Injection" [0], [2])
-* Deklarieren von Abhängigkeiten durch Interfaces vereinfacht das Lesen der Klasse
-* Deklarieren von Interfaces definiert den Weg wie man "MyClass" injizieren
-* Erklärt was der Quelltext erwartet [6]
-* Bezeichnet alle "beweglichen Teile"
-* Ermöglicht das Zählen der Abhängigkeiten durch "grep -r 'MyClassAwareInterface' source/"
+* Sie vereinfachen Dependency Injection
+* Sind ebenfalls als "Interface Injection" [0], [2] bekannt
+* Abhängigkeiten durch Interfaces zu deklarieren, vereinfacht das Lesen der Klasse
+* Definiert den Weg, wie ein Objekt injiziert wird
+* Benennt alle "beweglichen Teile"
+* Vereinfacht das Zählen der Abhängigkeiten durch "grep -r 'MyClassAwareInteface' source/"
 
 ----
 
@@ -73,7 +73,7 @@ Wozu ein AwareInterface?
 Dependency Injection?
 =====================
 
-Aber es gibt doch mehrere Wege! [1]
+Aber es gibt noch mehrere Wege! [1]
 
 ----
 
@@ -84,7 +84,6 @@ Constructor Injection
 * \+ Objekt deklariert die Komplexität im Voraus
 * +/- Abhängigkeiten können nicht nachträglich geändert werden
 * \- Kann zu zyklischen Abhängigkeiten führen
-* \- Abhänigkeiten sind nicht polymorph
 * \- Ein Parameter pro Abhängigkeit
 * \- Konstruktoren sind nicht Teil des Liskov Substitutaion Principle [4] (Totschlagkriterium!)
 
@@ -93,8 +92,9 @@ Constructor Injection
 Setter Injection
 ----------------
 
-* \+ Ein Punkt zur injizieren pro Abhängigkeit
-* +/- Es ist schwer zwischen optionalen und zwingenden Abhängigkeiten zu unterscheiden
+* \+ Ein Weg zur Injizierung pro Abhängigkeit
+* \- Kein definierter Weg wie eine Abhängigkeit injiziert wird
+* \- Es ist schwer zwischen optionalen und zwingenden Abhängigkeiten zu unterscheiden
 * \- Verbraucher muss sich sicher sein alle Abhängigkeiten injiziert zu haben
 
 ----
@@ -106,7 +106,7 @@ Interface Injection (Ein spezieller Setter Injection)
 * \+ Eine definierte Art wie man eine Abhängigkeit injiziert
 * \+ Interface Injection kann zu einer projektweiten Regel führen wie man optionale und zwingende Abhängigkeiten bezeichnet
 * \+ Vereinfacht das Einbauen von "DI" [3] in alten Quelltext (durch hart verdrahten einer Prüfungen wie "instanceof MyClassAwareInterface" [9])
-* \- Kann zu vielen Interfaces Definitionen führen
+* \- Kann zu vielen Interface Definitionen führen
 * \- Konstruktoren sind nicht Teil des Liskov Substitutaion Principle [4] (Totschlagkriterium!)
 
 ----
@@ -114,8 +114,8 @@ Interface Injection (Ein spezieller Setter Injection)
 :data-x: r-800
 :data-scale: 1
    
-AwareInterface === Interface Injection?
-=======================================
+AwareInterface Das Gleiche Wie InterfaceInjection?
+==================================================
 
 * Nein (zumindest nicht für mich)
 * Injection Interface definiert den Weg wie ein Typ/Objekt als Abhängigkeit injizieren wird
@@ -125,8 +125,8 @@ AwareInterface === Interface Injection?
 
 :data-y: r1000
 
-Meine Traumwelt
-===============
+Was meinst du mit "mehr"?
+=========================
 
 * "Bewusstsein impliziert das Wissen gesammelt durch die eigene Erkenntnisse oder mittels erhaltener Informationen" [8]
 * Es sollte wenigst die ersten zwei Methoden beinhalten [7]:
@@ -134,14 +134,14 @@ Meine Traumwelt
     * "getMyClass()"
     * "hasMyClass()" (optional)
 * Falls "hasMyClass()" definiert ist, sollte die Abhängigkeit optional sein
-* Falls die Abhängigkeit zwingend ist, sollte der Name des Interfaces auf "InjectInterface" oder "DependendInterface" enden
+* Falls die Abhängigkeit zwingend ist, könnte der Name des Interfaces auf "InjectInterface" oder "DependendInterface" enden
 
 ----
 
 Optionale Abhängigkeiten?
 =========================
 
-* Beispiel, wird kein Logger injiziert gibt es kein Logging, aber der Code funktioniert weiterhin
+* Beispielsweise wird kein Logger injiziert gibt es kein Logging, aber der Code funktioniert weiterhin
     * Vereinfacht das Unittesten (wie "DI" im Allgemeinen)
 * Implementierung von neuen, optionalen Funktionalitäten und einfaches Ausprobieren (ohne großem Aufwand)
     * Einfaches entfernen von unpraktischen Funktionalitäten
@@ -155,15 +155,18 @@ Optionale Abhängigkeiten?
 Fragen?
 =======
 
+Ich hab welche :-)
+------------------
+
+* Nutzt ihr AwareInterfaces oder InjectionInterfaces (warum, warum nicht?)
+* Wie verdeutlicht ihr optionale und zwingende Abhängigkeiten?
+
 ----
 
 :data-rotate: -90
 
 Eure Meinung?
 =============
-
-* Nutzt ihr AwareInterfaces oder InjectionInterfaces (warum, warum nicht?)
-* Wie verdeutlicht ihr optionale und zwingende Abhängigkeiten?
 
 ----
 
