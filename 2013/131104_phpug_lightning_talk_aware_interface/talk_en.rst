@@ -42,13 +42,13 @@ Who I Am
 
 ----
 
-What Is This Talk About
-=======================
+What Is This Talk About?
+========================
 
-* write easy to read code
 * dependency injection (automatically and "by hand")
+* add some thoughts about how to write easy to read code
 * philosophy and interpretion of words ;-)
-* remind you that there is a world without "DIC" [5] out there
+* remind you about the fact that there is a world without "DIC" [5] out there
 
 ----
 
@@ -56,12 +56,13 @@ What Is This Talk About
 :data-y: r500
 :data-scale: 0.1
 
-AwareInterface, For What?
-=========================
+AwareInterface?
+===============
 
-* dependency injection (also known as "interface injection" [0], [2])
-* declare dependencies via interfaces to easy up reading classes
-* declare interfaces to define the way of injecting "MyClass"
+* they are good for dependency injection
+* also known as "interface injection" [0], [2]
+* declareing dependency via interface simplifies the reading of a class
+* defines the way of injecting an object "MyClass"
 * explains what the code expects [6]
 * names all the "moving parts"
 * easy up counting of dependencies via "grep -r 'MyClassAwareInterface' source/"
@@ -95,6 +96,8 @@ Setter Injection
 
 * \+ one injection point per dependency
 * +/- its hard to distinguish between mandatory and optional dependencies
+* \- no defined way how to inject "MyClass" into the code
+* \- hard to distinguish between mandatory and optional dependency
 * \- consumer has to be very honest to inject all dependencies
 
 ----
@@ -102,8 +105,8 @@ Setter Injection
 Interface Injection (A Special Setter Injection)
 ------------------------------------------------
 
-* \+ increase readability of class structure
-* \+ one defined injection point and way per dependency
+* \+ increases the readability of class a structure
+* \+ a defined injection point and way per dependency
 * \+ interface injection could lead to a project based rule to distinguish between mandatory and optiona dependencies
 * \+ easy way for implementing "DI" [3] in old code (by hard coding some "instanceof MyClassAwareInterface" checks [9])
 * \- could lead to a lot of consumed interfaces
@@ -114,26 +117,26 @@ Interface Injection (A Special Setter Injection)
 :data-x: r-800
 :data-scale: 1
    
-AwareInterface === Interface Injection?
-=======================================
+AwareInterface Equals InjectionInterface?
+=========================================
 
 * no (at least not for me)
-* injection interface defines a method to inject a typ/object as dependency
+* injection interface defines a way to inject a typ/object as dependency
 * aware interface should do a bit more
 
 ----
 
 :data-y: r1000
 
-My Ideal World
-==============
+What Is This "Bit More"?
+========================
 
 * "Aware implies knowledge gained through one's own perceptions or by means of information" [8]
-* should contain two or three methods [7]:
+* it should contain two or three methods [7]:
     * "setMyClass(MyClassInterface $myClass)"
     * "getMyClass()"
     * "hasMyClass()" (optional)
-* if "hasMyClass()" is defined in the interface, the dependency should be optional
+* if it contains a "hasMyClass()" method, the dependency should be optional
 * if dependency is mandatory, the name of the interface should be "InjectInterface" or "DependendInterface"
 
 ----
@@ -142,7 +145,7 @@ Optional Dependencies?
 ======================
 
 * for example, no logger injected leads to no logging but still working code
-    * speed and easy up unittests (as "DI" in general)
+    * speed up and simplifies unittests (as "DI" in general)
 * create a new feature and try to test it (without big refactoring)
     * easy up removing of impractical features
 
@@ -155,15 +158,18 @@ Optional Dependencies?
 Questions?
 ==========
 
+I Have Some :-)
+---------------
+
+* are you using aware/injection interfaces (why/why not)?
+* how do you clear up optional and mandatory dependencies?
+
 ----
 
 :data-rotate: -90
 
 Your Opinion?
 =============
-
-* are you using aware/injection interfaces (why/why not)?
-* how do you clear up optional and mandatory dependencies?
 
 ----
 
