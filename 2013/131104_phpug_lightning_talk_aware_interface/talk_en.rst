@@ -115,7 +115,7 @@ Interface Injection (A Special Setter Injection)
 :data-x: r-800
 :data-scale: 1
    
-AwareInterface Equals InjectionInterface?
+AwareInterface Equals InterfaceInjection?
 =========================================
 
 * no (at least not for me)

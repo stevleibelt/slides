@@ -114,7 +114,7 @@ Interface Injection (Ein spezieller Setter Injection)
 :data-x: r-800
 :data-scale: 1
    
-AwareInterface Das Gleiche Wie InterfaceInjection?
+AwareInterface Das Gleiche Wie InjectionInterface?
 ==================================================
 
 * Nein (zumindest nicht für mich)
