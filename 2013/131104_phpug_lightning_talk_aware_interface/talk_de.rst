@@ -46,7 +46,7 @@ Um was geht es in diesem Vortrag?
 =================================
 
 * Kurze Auffrischung was Dependency Injection ist
-* Anmerkung wie man lesbaren Queltext schreiben kann
+* Anmerkung wie man lesbaren Quelltext schreiben kann
 * Philosophieren und Interpretieren von Wörtern ;-)
 * Daran zu erinnern, dass es noch immer eine Welt ohne "DIC" [5] gibt
 
