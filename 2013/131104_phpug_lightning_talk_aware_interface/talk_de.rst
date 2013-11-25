@@ -107,14 +107,14 @@ Interface Injection (Ein spezieller Setter Injection)
 * \+ Interface Injection kann zu einer projektweiten Regel führen wie man optionale und zwingende Abhängigkeiten bezeichnet
 * \+ Vereinfacht das Einbauen von "DI" [3] in alten Quelltext (durch hart verdrahten einer Prüfungen wie "instanceof MyClassAwareInterface" [9])
 * \- Kann zu vielen Interface Definitionen führen
-* \- Konstruktoren sind nicht Teil des Liskov Substitutaion Principle [4] (Totschlagkriterium!)
+* \- Verbraucher muss sich sicher sein alle Abhängigkeiten injiziert zu haben
 
 ----
 
 :data-x: r-800
 :data-scale: 1
    
-AwareInterface Das Gleiche Wie InterfaceInjection?
+AwareInterface Das Gleiche Wie InjectionInterface?
 ==================================================
 
 * Nein (zumindest nicht für mich)
