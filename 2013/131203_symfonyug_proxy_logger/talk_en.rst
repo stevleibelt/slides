@@ -25,14 +25,25 @@ Proxy Logger Component
 
 ----
 
-Logging Or Do You Mean Metrics?
-===============================
+Why At A Symfony UserGroup?
+===========================
 
-What Does It Mean?
-------------------
+.. code:: php
 
-* measuring of data
-* record of data
+    "symfony/event-dispatcher": "v2.3.5"    //since version 1.2.0 :-)
+
+----
+
+Logging Or Metrics Or Writing Of History?
+=========================================
+
+What Does It All Mean?
+----------------------
+
+* analyse interal data
+* collect interal data
+* meter interal data
+* record interal data
 
 ----
 
@@ -59,6 +70,9 @@ Writing Of History?
 * recoding of events like:
     * user (id 3) had registerd with link "http://www.foo.bar/my-add-uuid-123"
     * user (id 3) purchased contract (id 9) 
+* preserve status of a bunch of data
+    * create graph of data transformation
+    * record when happen what on which set of data
 
 ----
 
@@ -67,7 +81,10 @@ And Graylog2 Is (As An Example)?
 
     Graylog2 is for data analysis (`[0]`)
 
+So graylog is pure `web analytics` (doing all at once).
+
 .. _[0]: http://www.graylog2.org/
+.. _web analytics: http://en.wikipedia.org/wiki/Web_analytics
 
 ----
 
@@ -80,44 +97,104 @@ So What Do I Mean With Logging?
 * the more it went wrong, the more i want to get dumped
 * logging per instance (webserver)
 * dumping process data? secure your logfiles!
+* not meaning webserver log but web application log
 
 ----
 
-Why At A Symfony UserGroup?
-===========================
+Confused?
+---------
 
-.. code:: php
+* figure out what your customer want
+* your customer should know what to measure
+    * avoid measure everything
+    * do not interpret data by adding wished cross connections
+* try to define common terms for your team and your customer
+* separate you data
+* create logger, history and metric writer (even if they all are simple writing to a file)
 
-    "symfony/event-dispatcher": "v2.3.5"    //since version 1.2.0 :-)
+----
 
-How I Came To The Idea?
-=======================
+All I Want To Do Is To Do Logging
+=================================
+
+* never found the right balance between logging enough to debug and do not glut the logfiles
+* set loglevel to warning and you are loosing notice, info or debug
+* set loglevel to info and your log file will be flooded with messages
+* if something goes wrong, "i want it all" (`[0]`)
+
+.. [0]: http://en.wikipedia.org/wiki/I_Want_It_All
+
+----
+
+How To Solve This Problem?
+==========================
+
+Log all process data but only when something goes wrong.
+
+----
+
+Meaning?
+-------
+
+* buffer log entries
+* clean or flush the buffer under well defined circumstances
+* deals with (a collection of) psr3 loggers
+
+----
+
+* so i searched and found nothing
+* started developing and released `version 0.9.0`
+* it was working but, it looks like a first draft ;-)
+* later on i stumbled over `monolog` and its `FingersCrossedHandler` (so i'm not alone with that concept of logging :-))
+
+.. _version 0.9.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/0.9.0
+.. _monolog: https://github.com/Seldaek/monolog
+.. _FingersCrossedHandler: https://github.com/Seldaek/monolog/tree/master/src/Monolog/Handler/FingersCrossed
 
 ----
 
 What It Can
 ===========
 
+* defines a `log request` as a php object
+* wraps your existing logger
+* create a logger collection by using the `proxy logger`
+* collect a bunch of log entries by using the `buffer logger`
+* controll the buffer behaviour by using the `buffer manipulators`
+* influence the process flow by using the build in `event system`
+* be lazy, use the `factories`
+* use the `IsValidLogLevel`
+
 .. use Comparison Between Normal Logger And Trigger Flush Buffer Logger
+.. _log request: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/LogRequest/LogRequestInterface.php
+.. _proxy logger: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Logger/ProxyLoggerInterface.php
+.. _buffer logger: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Logger/BufferLoggerInterface.php
+.. _buffer manipulators: https://github.com/stevleibelt/php_component_proxy_logger/tree/master/source/Net/Bazzline/Component/ProxyLogger/BufferManipulator
+.. _event system: https://github.com/stevleibelt/php_component_proxy_logger/tree/master/source/Net/Bazzline/Component/ProxyLogger/Event
+.. _factories: https://github.com/stevleibelt/php_component_proxy_logger/tree/master/source/Net/Bazzline/Component/ProxyLogger/Factory
+.. _IsValidLogLevel: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Validator/IsValidLogLevel.php
 
 ----
 
 What It Can Not
 ===============
 
+* it simple deals with log entries
+* not where to store
+* not how to store
+
 ----
 
 Common Terms
 ============
 
-.. https://github.com/stevleibelt/php_component_proxy_logger/blob/master/documentation/CommonTerms.md
-
-----
-
-Components
-==========
-
-.. https://github.com/stevleibelt/php_component_proxy_logger/blob/master/documentation/Components.md
+* RealLogger represents a psr-3 logger
+* LogRequest represents a log request (log level, message and context)
+* LogRequestBuffer represents a collection of log requests that are not pushed to the real loggers
+* ProxyLogger represents a collection of real loggers
+* BufferLogger represents as a log request keeper that pass each log request to a buffer
+* BypassBufferInterface represents a buffer manipulation to bypass a certain log level to all added real loggers
+* FlushBufferTriggerInterface represents a buffer manipulation to trigger a buffer flush based on a log level
 
 ----
 
@@ -142,12 +219,21 @@ How To Use It?
 
 ----
 
+What Else?
+==========
+
+If you have to deal with log4php loggers, use an `adapter`.
+
+.. _adapter: https://github.com/stevleibelt/php_component_psr_and_log4php_adapter
+
+----
+
 Crux?
 =====
 
 * do not log all
 * structure your log
-* explain your customer that they want metrics or history
+* explain your customer that they want metric or history
 * add bugs or remarks to the `component`
 * joind the development `team`
 
