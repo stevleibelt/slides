@@ -25,14 +25,61 @@ Proxy Logger Component
 
 ----
 
-Logging?
-========
+Logging Or Do You Mean Metrics?
+===============================
 
 What Does It Mean?
 ------------------
 
-Differences To Metrics
-----------------------
+* measuring of data
+* record of data
+
+----
+
+Logging?
+--------
+
+    In computing, a logfile or simply log is a file that records events taking place in the execution of a system in order to provide an audit trail that can be used to understand the activity of the system and to diagnose problems. The act of keeping a logfile is called logging. (`[0]`)
+
+.. _[0]: http://en.wikipedia.org/wiki/Logfile
+
+----
+
+Metrics?
+--------
+
+    A software metric is a measure of some property of a piece of software or its specifications [...] 
+    The goal is obtaining objective, reproducible and quantifiable measurements, which may have numerous valuable applications in schedule and budget planning, cost estimation, quality assurance testing, software debugging, software performance optimization, and optimal personnel task assignments. (`[0]`)
+
+.. _[0]: http://en.wikipedia.org/wiki/Software_metric
+
+Writing Of History?
+-------------------
+
+* recoding of events like:
+    * user (id 3) had registerd with link "http://www.foo.bar/my-add-uuid-123"
+    * user (id 3) purchased contract (id 9) 
+
+----
+
+And Graylog2 Is (As An Example)?
+--------------------------------
+
+    Graylog2 is for data analysis (`[0]`)
+
+.. _[0]: http://www.graylog2.org/
+
+----
+
+So What Do I Mean With Logging?
+-------------------------------
+
+* record of workflow
+* record of processed data
+* dump of processed data if something went wrong
+* the more it went wrong, the more i want to get dumped
+* logging per instance (webserver)
+* dumping process data? secure your logfiles!
 
 ----
 
