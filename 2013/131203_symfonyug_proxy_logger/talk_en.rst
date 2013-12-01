@@ -15,8 +15,8 @@ Proxy Logger Component
 ======================
 
 | 03.12.2013  
-| `Symfony User Group Hamburg`
-| `mindworks GmbH`
+| `Symfony User Group Hamburg`_
+| `mindworks GmbH`_
 
 .. _mindworks GmbH: http://www.mindworks.de
 .. _Symfony User Group Hamburg: http://www.meetup.com/sfughh/events/143293602
@@ -64,7 +64,7 @@ What Does It All Mean?
 Logging?
 --------
 
-    In computing, a logfile or simply log is a file that records events taking place in the execution of a system in order to provide an audit trail that can be used to understand the activity of the system and to diagnose problems. The act of keeping a logfile is called logging. (`[0]`)
+    In computing, a logfile or simply log is a file that records events taking place in the execution of a system in order to provide an audit trail that can be used to understand the activity of the system and to diagnose problems. The act of keeping a logfile is called logging. (`[0]`_)
 
 .. _[0]: http://en.wikipedia.org/wiki/Logfile
 
@@ -74,9 +74,11 @@ Metrics?
 --------
 
     A software metric is a measure of some property of a piece of software or its specifications [...] 
-    The goal is obtaining objective, reproducible and quantifiable measurements, which may have numerous valuable applications in schedule and budget planning, cost estimation, quality assurance testing, software debugging, software performance optimization, and optimal personnel task assignments. (`[1]`)
+    The goal is obtaining objective, reproducible and quantifiable measurements, which may have numerous valuable applications in schedule and budget planning, cost estimation, quality assurance testing, software debugging, software performance optimization, and optimal personnel task assignments. (`[1]`_)
 
 .. _[1]: http://en.wikipedia.org/wiki/Software_metric
+
+----
 
 Writing Of History?
 -------------------
@@ -94,9 +96,9 @@ Writing Of History?
 And Graylog2 (As An Example) Is?
 --------------------------------
 
-    Graylog2 is for data analysis (`[2]`)
+    Graylog2 is for data analysis (`[2]`_)
 
-So graylog is pure `web analytics` (doing all at once if you ask me).
+So graylog is pure `web analytics`_ (doing all at once if you ask me).
 
 .. _[2]: http://www.graylog2.org/
 .. _web analytics: http://en.wikipedia.org/wiki/Web_analytics
@@ -115,7 +117,7 @@ What Do I Mean With Logging?
 * not meaning webserver log but web application log
 * delete old log files or log entries without fear
 * change log behaviour without fear
-* split your logs into logical units (import/export/registration)
+* split logs into logical units (import/export/registration)
 
 ----
 
@@ -127,13 +129,13 @@ Confused?
     * avoid measure everything
     * do not interpret data by adding wished cross connections
 * try to define common terms for your team and your customer
-* separate you data
+* separate you data (by metric, logging and history)
 * create logger, history and metric writer (even if they are all simple file writer)
 
 ----
 
-All I Want To Do Is To Do Logging
-=================================
+All I Want To Do Is Logging
+===========================
 
 What I Struggled With
 ---------------------
@@ -145,9 +147,9 @@ What I Struggled With
 What I Need
 -----------
 
-* if something goes wrong, "i want it all" (`[3]`)
+* if something goes wrong, "i want it all" (`[3]`_)
 
-.. [3]: http://en.wikipedia.org/wiki/I_Want_It_All
+.. _[3]: http://en.wikipedia.org/wiki/I_Want_It_All
 
 ----
 
@@ -172,11 +174,11 @@ History Of Development
 ----------------------
 
 * so i searched and found nothing good for php
-* started developing and released `version 0.9.0`
-* it was working but, it looks like a `first draft` ;-)
-* later on i stumbled over `monolog` and its `FingersCrossedHandler` (so i'm not alone with that concept of logging :-))
+* started developing and released `version 0.9.0`_
+* it was working but, it looks like a `first draft`_ ;-)
+* later on i stumbled over `monolog`_ and its `FingersCrossedHandler`_ (so i'm not alone with that concept of logging :-))
 * monolog looks like a big, monolithic logging component (sorry if i'm wrong)
-* big refactoring and implementation of event driven design leads to `version 1.2.0`
+* big refactoring and implementation of event driven design leads to `version 1.2.0`_
 * story continues :-)
 
 .. _version 0.9.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/0.9.0
@@ -190,16 +192,16 @@ History Of Development
 What It Is
 ==========
 
-* defines a `log request` as a php object
+* defines a `log request`_ as a php object
 * wraps your existing logger or loggers
-* create a logger collection by using the `proxy logger`
-* collect a bunch of log entries by using the `buffer logger`
-* controll the buffer behaviour by using the `buffer manipulators`
-* influence the process flow by using the build in `event system`
-* be lazy, use the `factories`
-* use the `IsValidLogLevel`
-* follows `unix philosophy` (do one thing and do it well)
-* you can enrich you existing logger component
+* create a logger collection by using the `proxy logger`_
+* collect a bunch of log entries by using the `buffer logger`_
+* control the buffer behaviour by using the `buffer manipulators`_
+* influence the process flow by using the build in `event system`_
+* be lazy, use the `factories`_
+* use the `IsValidLogLevel`_
+* follows `unix philosophy`_ (do one thing and do it well)
+* enrich you existing logger component
 
 .. _log request: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/LogRequest/LogRequestInterface.php
 .. _proxy logger: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Logger/ProxyLoggerInterface.php
@@ -215,7 +217,7 @@ What It Is
 Showtime
 ========
 
-Time for some `demo implementation`!
+Time for some `demo implementation`_!
 
 .. _demo implementation: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/examples/Example/ManipulateBufferLogger/ExampleWithUpwardFlushBufferTriggerVersusNormalLogger.php
 
@@ -247,7 +249,7 @@ Common Terms
 Installation
 ============
 
-Use `composer` and `packagist`.
+Use `composer`_ and `packagist`_.
 
 .. code:: php
 
@@ -302,9 +304,9 @@ use this
 What Else?
 ==========
 
-If you have to deal with `log4php` loggers, use an `adapter`.
+If you have to deal with `log4php`_ loggers, use an `adapter`_.
 
-And the adapter works vica versa (super cool, put in a psr3 logger in an log4php environment).
+And the adapter works vica versa (super cool, use a psr3 logger in a log4php environment).
 
 .. _adapter: https://github.com/stevleibelt/php_component_psr_and_log4php_adapter
 .. _log4php: https://logging.apache.org/log4php/
@@ -317,8 +319,8 @@ Crux?
 * do not log all
 * structure your log
 * explain your customer that they want metric or history
-* add bugs or remarks to the `component`
-* joind the development `team`
+* add bugs or remarks to the `component`_
+* joind the development `team`_
 
 .. _component: https://github.com/stevleibelt/php_component_proxy_logger
 .. _team: https://github.com/bazzline
