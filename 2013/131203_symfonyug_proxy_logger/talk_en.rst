@@ -25,6 +25,15 @@ Proxy Logger Component
 
 ----
 
+What Is This Talk About?
+========================
+
+* distinction between logging, metrics and writing of history
+* present you a way of logging
+* present you a logging component
+
+----
+
 Why At A Symfony UserGroup?
 ===========================
 
@@ -34,17 +43,21 @@ Why At A Symfony UserGroup?
 
 ----
 
-Logging Or Metrics Or Writing Of History?
-=========================================
+Logging, Metrics Or Writing Of History?
+=======================================
+
+I gain the feeling that things where mixing up.
+
+----
 
 What Does It All Mean?
 ----------------------
 
-* analyse interal data
+* analyse internal data
 * archive internal data
-* collect interal data
-* meter interal data
-* record interal data
+* collect internal data
+* meter internal data
+* record internal data
 
 ----
 
@@ -78,20 +91,20 @@ Writing Of History?
 
 ----
 
-And Graylog2 Is (As An Example)?
+And Graylog2 (As An Example) Is?
 --------------------------------
 
     Graylog2 is for data analysis (`[0]`)
 
-So graylog is pure `web analytics` (doing all at once).
+So graylog is pure `web analytics` (doing all at once if you ask me).
 
 .. _[0]: http://www.graylog2.org/
 .. _web analytics: http://en.wikipedia.org/wiki/Web_analytics
 
 ----
 
-So What Do I Mean With Logging?
--------------------------------
+What Do I Mean With Logging?
+----------------------------
 
 * record of workflow
 * record of processed data
@@ -102,6 +115,7 @@ So What Do I Mean With Logging?
 * not meaning webserver log but web application log
 * delete old log files or log entries without fear
 * change log behaviour without fear
+* split your logs into logical units (import/export/registration)
 
 ----
 
@@ -114,16 +128,23 @@ Confused?
     * do not interpret data by adding wished cross connections
 * try to define common terms for your team and your customer
 * separate you data
-* create logger, history and metric writer (even if they all are simple writing to a file)
+* create logger, history and metric writer (even if they are all simple file writer)
 
 ----
 
 All I Want To Do Is To Do Logging
 =================================
 
+What I Struggled With
+---------------------
+
 * never found the right balance between logging enough to debug and do not glut the logfiles
 * set loglevel to warning and you are loosing notice, info or debug
 * set loglevel to info and your log file will be flooded with messages
+
+What I Need
+-----------
+
 * if something goes wrong, "i want it all" (`[0]`)
 
 .. [0]: http://en.wikipedia.org/wiki/I_Want_It_All
@@ -166,11 +187,11 @@ History Of Development
 
 ----
 
-What It Can
-===========
+What It Is
+==========
 
 * defines a `log request` as a php object
-* wraps your existing logger
+* wraps your existing logger or loggers
 * create a logger collection by using the `proxy logger`
 * collect a bunch of log entries by using the `buffer logger`
 * controll the buffer behaviour by using the `buffer manipulators`
@@ -180,7 +201,6 @@ What It Can
 * follows `unix philosophy` (do one thing and do it well)
 * you can enrich you existing logger component
 
-.. use Comparison Between Normal Logger And Trigger Flush Buffer Logger
 .. _log request: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/LogRequest/LogRequestInterface.php
 .. _proxy logger: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Logger/ProxyLoggerInterface.php
 .. _buffer logger: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Logger/BufferLoggerInterface.php
@@ -192,14 +212,22 @@ What It Can
 
 ----
 
-What It Can Not
-===============
+Showtime
+========
+
+Time for some `demo implementation`!
+
+.. _demo implementation: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/examples/Example/ManipulateBufferLogger/ExampleWithUpwardFlushBufferTriggerVersusNormalLogger.php
+
+----
+
+What It Is Not
+==============
 
 * it simple deals with log entries
-* not where to store
-* not how to store
-* is not the logger component
-* you need to install a real logger
+* it does not care how to store
+* it does not care where to store
+* is not *the* logger component, just a part of it
 
 ----
 
