@@ -159,7 +159,7 @@ Log all process data but only when something goes wrong.
 ----
 
 Meaning?
--------
+--------
 
 * buffer log entries
 * clean or flush the buffer under well defined circumstances
