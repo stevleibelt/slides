@@ -177,6 +177,8 @@ What It Can
 * influence the process flow by using the build in `event system`
 * be lazy, use the `factories`
 * use the `IsValidLogLevel`
+* follows `unix philosophy` (do one thing and do it well)
+* you can enrich you existing logger component
 
 .. use Comparison Between Normal Logger And Trigger Flush Buffer Logger
 .. _log request: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/LogRequest/LogRequestInterface.php
@@ -186,6 +188,7 @@ What It Can
 .. _event system: https://github.com/stevleibelt/php_component_proxy_logger/tree/master/source/Net/Bazzline/Component/ProxyLogger/Event
 .. _factories: https://github.com/stevleibelt/php_component_proxy_logger/tree/master/source/Net/Bazzline/Component/ProxyLogger/Factory
 .. _IsValidLogLevel: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/source/Net/Bazzline/Component/ProxyLogger/Validator/IsValidLogLevel.php
+.. _unix philosophy: http://en.wikipedia.org/wiki/Unix_philosophy
 
 ----
 
@@ -195,6 +198,8 @@ What It Can Not
 * it simple deals with log entries
 * not where to store
 * not how to store
+* is not the logger component
+* you need to install a real logger
 
 ----
 
