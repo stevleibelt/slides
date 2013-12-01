@@ -41,6 +41,7 @@ What Does It All Mean?
 ----------------------
 
 * analyse interal data
+* archive internal data
 * collect interal data
 * meter interal data
 * record interal data
@@ -70,6 +71,7 @@ Writing Of History?
 * recoding of events like:
     * user (id 3) had registerd with link "http://www.foo.bar/my-add-uuid-123"
     * user (id 3) purchased contract (id 9) 
+    * archive user interactions for the reason of law
 * preserve status of a bunch of data
     * create graph of data transformation
     * record when happen what on which set of data
@@ -98,6 +100,8 @@ So What Do I Mean With Logging?
 * logging per instance (webserver)
 * dumping process data? secure your logfiles!
 * not meaning webserver log but web application log
+* delete old log files or log entries without fear
+* change log behaviour without fear
 
 ----
 
@@ -138,11 +142,12 @@ Meaning?
 
 * buffer log entries
 * clean or flush the buffer under well defined circumstances
-* deals with (a collection of) psr3 loggers
+* deal with (a collection of) psr3 loggers
+* one log target (file/database column/whatever) per logical log unit (like import/purchase/migration)
 
 ----
 
-* so i searched and found nothing
+* so i searched and found nothing good for php
 * started developing and released `version 0.9.0`
 * it was working but, it looks like a first draft ;-)
 * later on i stumbled over `monolog` and its `FingersCrossedHandler` (so i'm not alone with that concept of logging :-))
@@ -215,6 +220,38 @@ Use `composer` and `packagist`.
 How To Use It?
 ==============
 
+instead of
+----------
+
+.. code:: php
+    class MyLoggerFactory
+    {
+        public function createMyProcessLogger()
+        {
+            return new Logger();
+        }
+    }
+
+----
+
+use this
+--------
+
+.. code:: php
+    class MyLoggerFactory
+    {
+        public function createMyProcessLogger()
+        {
+            $realLogger = new Logger();
+
+            //of course this should not be done on each create call
+            $proxyLoggerFactory = new ProxyLoggerFactory();
+            $proxyLogger = $proxyLoggerFactory->create($realLogger);
+
+            return $proxyLogger;
+        }
+    }
+
 .. https://github.com/stevleibelt/php_component_proxy_logger/blob/master/documentation/MigrationTutorial.md
 
 ----
@@ -222,9 +259,12 @@ How To Use It?
 What Else?
 ==========
 
-If you have to deal with log4php loggers, use an `adapter`.
+If you have to deal with `log4php` loggers, use an `adapter`.
+
+And the adapter works vica versa (super cool, put in a psr3 logger in an log4php environment).
 
 .. _adapter: https://github.com/stevleibelt/php_component_psr_and_log4php_adapter
+.. _log4php: https://logging.apache.org/log4php/
 
 ----
 
