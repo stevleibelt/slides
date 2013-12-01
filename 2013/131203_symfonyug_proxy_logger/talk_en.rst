@@ -147,6 +147,9 @@ Meaning?
 
 ----
 
+History Of Development
+----------------------
+
 * so i searched and found nothing good for php
 * started developing and released `version 0.9.0`
 * it was working but, it looks like a `first draft` ;-)
