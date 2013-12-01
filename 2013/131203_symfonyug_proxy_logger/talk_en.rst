@@ -74,9 +74,9 @@ Metrics?
 --------
 
     A software metric is a measure of some property of a piece of software or its specifications [...] 
-    The goal is obtaining objective, reproducible and quantifiable measurements, which may have numerous valuable applications in schedule and budget planning, cost estimation, quality assurance testing, software debugging, software performance optimization, and optimal personnel task assignments. (`[0]`)
+    The goal is obtaining objective, reproducible and quantifiable measurements, which may have numerous valuable applications in schedule and budget planning, cost estimation, quality assurance testing, software debugging, software performance optimization, and optimal personnel task assignments. (`[1]`)
 
-.. _[0]: http://en.wikipedia.org/wiki/Software_metric
+.. _[1]: http://en.wikipedia.org/wiki/Software_metric
 
 Writing Of History?
 -------------------
@@ -94,11 +94,11 @@ Writing Of History?
 And Graylog2 (As An Example) Is?
 --------------------------------
 
-    Graylog2 is for data analysis (`[0]`)
+    Graylog2 is for data analysis (`[2]`)
 
 So graylog is pure `web analytics` (doing all at once if you ask me).
 
-.. _[0]: http://www.graylog2.org/
+.. _[2]: http://www.graylog2.org/
 .. _web analytics: http://en.wikipedia.org/wiki/Web_analytics
 
 ----
@@ -145,9 +145,9 @@ What I Struggled With
 What I Need
 -----------
 
-* if something goes wrong, "i want it all" (`[0]`)
+* if something goes wrong, "i want it all" (`[3]`)
 
-.. [0]: http://en.wikipedia.org/wiki/I_Want_It_All
+.. [3]: http://en.wikipedia.org/wiki/I_Want_It_All
 
 ----
 
@@ -265,6 +265,7 @@ instead of
 ----------
 
 .. code:: php
+
     class MyLoggerFactory
     {
         public function createMyProcessLogger()
@@ -279,6 +280,7 @@ use this
 --------
 
 .. code:: php
+
     class MyLoggerFactory
     {
         public function createMyProcessLogger()
@@ -345,4 +347,3 @@ Your Opinion?
 Thanks!
 =======
 
-----
