@@ -149,12 +149,14 @@ Meaning?
 
 * so i searched and found nothing good for php
 * started developing and released `version 0.9.0`
-* it was working but, it looks like a first draft ;-)
+* it was working but, it looks like a `first draft` ;-)
 * later on i stumbled over `monolog` and its `FingersCrossedHandler` (so i'm not alone with that concept of logging :-))
+* monolog looks like a big, monolithic logging component (sorry if i'm wrong)
 
 .. _version 0.9.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/0.9.0
 .. _monolog: https://github.com/Seldaek/monolog
 .. _FingersCrossedHandler: https://github.com/Seldaek/monolog/tree/master/src/Monolog/Handler/FingersCrossed
+.. _first draft: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/documentation/VersionHistory.md
 
 ----
 
@@ -285,21 +287,23 @@ Crux?
 Questions?
 ==========
 
+* who is using monolog?
+    * what are your experience?
+    * positives
+    * negatives?
+* what loggers are you using?
+* do you use your log files to create metrics?
+
 ----
 
 Your Opinion?
 =============
 
+* how do you like the main idea of the component?
+
 ----
 
 Thanks!
 =======
-
-----
-
-Version History?
-================
-
-.. https://github.com/stevleibelt/php_component_proxy_logger/blob/master/documentation/VersionHistory.md
 
 ----
