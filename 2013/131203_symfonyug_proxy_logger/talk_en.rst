@@ -155,8 +155,11 @@ History Of Development
 * it was working but, it looks like a `first draft` ;-)
 * later on i stumbled over `monolog` and its `FingersCrossedHandler` (so i'm not alone with that concept of logging :-))
 * monolog looks like a big, monolithic logging component (sorry if i'm wrong)
+* big refactoring and implementation of event driven design leads to `version 1.2.0`
+* story continues :-)
 
 .. _version 0.9.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/0.9.0
+.. _version 1.2.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/1.2.0
 .. _monolog: https://github.com/Seldaek/monolog
 .. _FingersCrossedHandler: https://github.com/Seldaek/monolog/tree/master/src/Monolog/Handler/FingersCrossed
 .. _first draft: https://github.com/stevleibelt/php_component_proxy_logger/blob/master/documentation/VersionHistory.md
