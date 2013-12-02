@@ -1,5 +1,5 @@
 :title: Proxy Logger Component
-:data-transition-duration: 1500
+:data-transition-duration: 2000
 
 Under licence of LGPL-3. You can get the source from: https://github.com/stevleibelt/slides/tree/master/2013/131203_symfinyug_proxy_logger
 Based on the example: https://hovercraft.readthedocs.org/en/1.0/_sources/examples/hovercraft.txt - http://regebro.github.io/hovercraft
@@ -8,6 +8,7 @@ https://hovercraft.readthedocs.org/en/1.0/
 http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt
 http://docutils.sourceforge.net/docs/user/rst/quickref.html
 http://en.wikipedia.org/wiki/ReStructuredText
+https://raw.github.com/regebro/hovercraft/master/docs/examples/positions.rst
 
 ----
 
@@ -20,8 +21,6 @@ Proxy Logger Component
 
 .. _mindworks GmbH: http://www.mindworks.de
 .. _Symfony User Group Hamburg: http://www.meetup.com/sfughh/events/143293602
-
-:data-y: r1000
 
 ----
 
@@ -42,6 +41,8 @@ Why At A Symfony UserGroup?
     "symfony/event-dispatcher": "v2.3.5"    //since version 1.2.0 :-)
 
 ----
+
+:data-y: r1000
 
 Distinction Between Logging, Metrics Or Writing Of History
 ==========================================================
@@ -134,6 +135,8 @@ And Also ...
 
 ----
 
+:data-x: r1500
+
 A Concept Of Logging
 ====================
 
@@ -186,6 +189,8 @@ Meaning?
 * one log target (file/database column/whatever) per logical log unit (like import/purchase/migration)
 
 ----
+
+:data-y: r1000
 
 A Logging Component
 ===================
@@ -349,6 +354,10 @@ And the adapter works vica versa (super cool, use a psr3 logger in a log4php env
 .. _log4php: https://logging.apache.org/log4php/
 
 ----
+
+:data-x: r0
+:data-y: r500
+:data-scale: 0.1 
 
 Recap
 =====
