@@ -208,7 +208,7 @@ History Of Development
 * implementation of event driven design leads to `version 1.2.0`_
 * story continues :-)
 * later on i stumbled over `monolog`_ and its `FingersCrossedHandler`_ (so i'm not alone with that concept of logging :-))
-* monolog looks like a big, monolithic logging component (sorry if i'm wrong)
+* monolog looks like big logging component with a log of features
 
 .. _version 0.9.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/0.9.0
 .. _version 1.0.0: https://github.com/stevleibelt/php_component_proxy_logger/tree/1.0.0
